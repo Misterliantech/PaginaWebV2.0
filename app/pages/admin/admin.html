@@ -1,18 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="admin.js" defer></script>
+    <link rel="stylesheet" href="admin.css">
+    <title>Pagina Principal</title>
 </head>
 <body>
-    <main>
-        <div class="form-container">
-            <h1>Bienvenido al area de administración</h1>
-            <button>Cerrar sesión</button>
+    <div class="carrusel">
+        <div class="contenedor">
+            <div class="producto">
+                <img src="https://img.freepik.com/fotos-premium/computadora-juegos-futurista-nueva-tecnologia_731790-51157.jpg?w=740" alt="Chasis Gamer">
+                <h3>Chasis Gamer Thermaltake T800</h3>
+                <h3>$450.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/fotos-premium/procesador-computadora-pasta-termica-cerca-parte-computadora-moderna-caja-pc-fondo_286662-410.jpg?semt=ais_hybrid" alt="Intel Core i9 12700K"> 
+                <h3>Procesador Intel Core i9</h3>
+                <h3>$960.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/fotos-premium/tarjeta-grafica-moderna-computadora-juegos-alto-rendimiento_520665-33626.jpg?semt=ais_hybrid" alt="RTX 4060 ROG STRIX">
+                <h3>RTX 4060 ROG STRIX</h3>
+                <h3>$3.800.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/foto-gratis/configuracion-escritorio-juego-neon-iluminado-gradiente-teclado_23-2149529404.jpg?semt=ais_hybrid" alt="Teclado Mecanico Aura II">
+                <h3>Teclado Mecanico Thermaltake Aura II</h3>
+                <h3>$230.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/fotos-premium/par-elegantes-pinzas-memoria-ram-computadora-negras-grises-aisladas-sobre-fondo-blanco-limpio_174533-114948.jpg?semt=ais_hybrid" alt="Memorias Ram Y-Skill 2x8GB 16GB">
+                <h3>Ram DDR4 Y-Skill 2x8GB 16GB</h3>
+                <h3>$410.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/fotos-premium/videojuego-armas-municion-resistencia-salud-huds-dejados-abiertos-monitor-pc_482257-98422.jpg?semt=ais_hybrid" alt="Monitor HP">
+                <h3>Monitor Hp Colossus FHD</h3>
+                <h3>$550.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/foto-gratis/configuracion-juego-luz-neon_23-2149829125.jpg?semt=ais_hybrid" alt="Silla Gamer">
+                <h3>Silla Gamer Acuarius R5</h3>
+                <h3>$775.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/fotos-premium/boton-cuadrado-negro-controlador-juego-inalambrico_948265-308430.jpg?semt=ais_hybrid" alt="Xbox One">
+                <h3>Consola Xbox Series X</h3>
+                <h3>$2.450.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/fotos-premium/juegos-azar-joystick-color_93675-53663.jpg?semt=ais_hybrid" alt="Joystick Xbox">
+                <h3>Joystick Xbox Series X / S</h3>
+                <h3>$320.000</h3>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://img.freepik.com/foto-gratis/vida-muerta-auriculares-ciberneticos-inalambricos_23-2151072238.jpg?t=st=1728525625~exp=1728529225~hmac=65693166b447b4c1c0948fdd0240fa931e2c512f8ea13480b725dc04a00f7525&w=740" alt="Diadema Gamer">
+                <h3>Diadema Sony H3310 Sonido 7.1</h3>
+                <h3>$450.000</h3>
+                <button>Comprar</button>
+            </div>
         </div>
-    </main>
+        <button class="flecha izquierda" onclick="cambiar(-1)">&#10094;</button>
+        <button class="flecha derecha" onclick="cambiar(1)">&#10095;</button>
+    </div>
+
+    <script src="admin.js"></script>
 </body>
 </html>
