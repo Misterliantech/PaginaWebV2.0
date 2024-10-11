@@ -1,24 +1,8 @@
 html {
-    --s: 262px; /* control the size*/
-    --c1: #822165;
-    --c2: #af6a87;
-    --c3: #baa0ab;
-    
-    --_g: var(--c1) 10%,var(--c2) 10.5% 19%,#0000 19.5% 80.5%,var(--c2) 81% 89.5%,var(--c3) 90%;
-    --_c: from -90deg at 37.5% 50%,#0000 75%;
-    --_l1: linear-gradient(145deg,var(--_g));
-    --_l2: linear-gradient( 35deg,var(--_g));
-    background: 
-      var(--_l1), var(--_l1) calc(var(--s)/2) var(--s),
-      var(--_l2), var(--_l2) calc(var(--s)/2) var(--s),
-      conic-gradient(var(--_c),var(--c1) 0) calc(var(--s)/8) 0,
-      conic-gradient(var(--_c),var(--c3) 0) calc(var(--s)/2) 0,
-      linear-gradient(90deg,var(--c3) 38%,var(--c1) 0 50%,var(--c3) 0 62%,var(--c1) 0);
-    background-size: var(--s) calc(2*var(--s)/3);
-  }
+   background-color: white;
+}
 
 body {
-    
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -29,27 +13,51 @@ body {
 }
 
 .carrusel {
-
-    justify-content: center;
+    justify-content: flex-start; /* Asegúrate de que los productos comiencen desde el inicio */
     position: relative;
-    max-width: 1200px; 
+    max-width: 1350px;
     overflow: hidden;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Mantener los productos en fila */
     align-items: center;
-    max-width: 1000px;
-
+    width: 100%;
 }
 
 .contenedor {
-
     display: flex;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease; /* Suavizar la transición */
+}
 
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+    min-width: 300px; /* Asegúrate de que cada producto tenga un ancho mínimo */
+    max-width: 300px; /* Ajusta según tus necesidades */
+}
+
+.producto img {
+
+    min-height: 400px;
+    max-height: 400px; 
+    min-width: 300px;
+    max-width: 300px;
+    margin: 0;
+}
+
+.producto h3 {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: black; 
+    text-align: center; 
+    margin: 20px 0; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
 }
 
 .producto button {
-
     display: inline-block; 
     padding: 10px 20px; 
     font-size: 16px; 
@@ -63,45 +71,11 @@ body {
     cursor: pointer; 
     transition: background-color 0.3s ease; 
     margin-top: 10px;
-    width: 100%;
-
+    width: 100%; /* Ocupa todo el ancho del contenedor del producto */
 }
 
-.producto button:hover{
-
+.producto button:hover {
     background-color: #218838; 
-
-}
-
-.producto img {
-
-    min-width: 300px;
-    max-width: 300px;
-    margin: 10px;
-    text-align: center;
-    max-height: 400px;
-    min-height: 400px;
-}
-
-.producto h3 {
-
-    font-size: 24px; 
-    font-weight: bold; 
-    color: black; 
-    text-align: center; 
-    margin: 20px 0; 
-    text-transform: uppercase; 
-    letter-spacing: 1px; 
-}
-
-.producto {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-
 }
 
 .flecha {
@@ -123,3 +97,113 @@ body {
 .derecha {
     right: 10px;
 }
+
+header {
+
+    width: 100%;
+    height: 90px;
+    background-color: #0b132b;
+
+}
+
+.interior {
+
+    max-width: 100%;
+    padding: 0 10px;
+    margin: auto;
+
+}
+
+.logo {
+
+    float: left;
+    padding: 5px 20px 0;
+}
+
+.logo img {
+
+    height: 80px;
+}
+
+.logo img:hover {
+
+    transform: scale(1.1);
+}
+
+.navegacion {
+
+    float:right;
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    z-index: 1000;
+}
+
+.navegacion ul {
+
+    list-style: none;
+    padding: 0 10px;
+
+}
+
+.navegacion ul li {
+
+    display: inline-block;
+    position: relative;
+    transition: .3s linear;
+    z-index: 1000;
+}
+
+.navegacion ul li:hover {
+
+    transform: scale(1.1);
+
+}
+
+.navegacion ul li a {
+
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 20px;
+    transition: .3s linear;
+
+}
+
+.navegacion ul li a:hover {
+
+    color: #00c9bd;
+    transform: scale(1.1);
+
+}
+
+.navegacion ul li:hover .hijos{
+
+    display: block;
+}
+
+.navegacion .submenu .hijos{
+
+    display: none;
+    background-color: #0b132b;
+    position: absolute;
+    width: 100%;
+
+}
+
+.navegacion .submenu  .hijos li {
+
+    display: block;
+    overflow: hidden;
+    border-botton: none;
+}
+
+.navegacion .submenu .hijos li a {
+
+    display: block;
+}
+
+
+
