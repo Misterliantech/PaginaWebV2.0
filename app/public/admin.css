@@ -1,31 +1,133 @@
-html {
-   background-color: white;
-}
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
 
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
+   background-color: white;
+   justify-content: center;
+   align-items: center;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Afacad Flux", sans-serif;
+    font-size: 30px;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+}
+
+.header{
+    box-sizing: border-box;
     margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+}
+
+.header .logo {
+
+    cursor: pointer;
+}
+
+.header .logo img {
+
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+
+    transform: scale(1.2);
+}
+
+.header .nav-links {
+
+    list-style: none;
+}
+
+.header .nav-links li{
+
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.header .nav-links li:hover{
+
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+
+    font-size: 700;
+    color: white;
+    text-decoration: none;
+
+}
+
+.header .nav-links li a:hover {
+
+    color: #28a745;
+}
+
+.header .btn button {
+
+    font-weight: 700;
+    height: 40px;
+    color: white;
+    padding: 9px, 25px;
+    background:#28a745;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header .btn button:hover {
+
+    background-color: white;
+    color: #28a745;
+    transform: scale (1.1);
+}
+
+.banner {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    overflow: hidden;
+}
+
+.banner img {
+
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .carrusel {
-    justify-content: flex-start; /* Asegúrate de que los productos comiencen desde el inicio */
+    justify-content: flex-start; 
     position: relative;
     max-width: 1350px;
     overflow: hidden;
     display: flex;
-    flex-direction: row; /* Mantener los productos en fila */
+    flex-direction: row; 
     align-items: center;
     width: 100%;
+    margin: 0 auto;
 }
 
 .contenedor {
     display: flex;
-    transition: transform 0.5s ease; /* Suavizar la transición */
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease; 
+    width: fit-content;
 }
 
 .producto {
@@ -34,8 +136,8 @@ body {
     align-items: center;
     margin: 10px;
     text-align: center;
-    min-width: 300px; /* Asegúrate de que cada producto tenga un ancho mínimo */
-    max-width: 300px; /* Ajusta según tus necesidades */
+    min-width: 300px; 
+    max-width: 300px; 
 }
 
 .producto img {
@@ -71,7 +173,7 @@ body {
     cursor: pointer; 
     transition: background-color 0.3s ease; 
     margin-top: 10px;
-    width: 100%; /* Ocupa todo el ancho del contenedor del producto */
+    width: 100%; 
 }
 
 .producto button:hover {
@@ -98,112 +200,7 @@ body {
     right: 10px;
 }
 
-header {
 
-    width: 100%;
-    height: 90px;
-    background-color: #0b132b;
-
-}
-
-.interior {
-
-    max-width: 100%;
-    padding: 0 10px;
-    margin: auto;
-
-}
-
-.logo {
-
-    float: left;
-    padding: 5px 20px 0;
-}
-
-.logo img {
-
-    height: 80px;
-}
-
-.logo img:hover {
-
-    transform: scale(1.1);
-}
-
-.navegacion {
-
-    float:right;
-    display: flex;
-    align-items: center;
-    min-height: 90px;
-    z-index: 1000;
-}
-
-.navegacion ul {
-
-    list-style: none;
-    padding: 0 10px;
-
-}
-
-.navegacion ul li {
-
-    display: inline-block;
-    position: relative;
-    transition: .3s linear;
-    z-index: 1000;
-}
-
-.navegacion ul li:hover {
-
-    transform: scale(1.1);
-
-}
-
-.navegacion ul li a {
-
-    color: #ffffff;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 12px 20px;
-    transition: .3s linear;
-
-}
-
-.navegacion ul li a:hover {
-
-    color: #00c9bd;
-    transform: scale(1.1);
-
-}
-
-.navegacion ul li:hover .hijos{
-
-    display: block;
-}
-
-.navegacion .submenu .hijos{
-
-    display: none;
-    background-color: #0b132b;
-    position: absolute;
-    width: 100%;
-
-}
-
-.navegacion .submenu  .hijos li {
-
-    display: block;
-    overflow: hidden;
-    border-botton: none;
-}
-
-.navegacion .submenu .hijos li a {
-
-    display: block;
-}
 
 
 
