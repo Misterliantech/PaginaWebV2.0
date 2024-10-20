@@ -19,10 +19,8 @@ app.use(cookieParser());
 
 app.get("/",authorization.soloPublico,(req,res)=> res.sendFile(__dirname + "/pages/login.html"));
 app.get("/register",authorization.soloPublico,(req,res)=> res.sendFile(__dirname + "/pages/register.html"));
-app.get("/compras", authorization.soloAdmin, (req, res) => {
-    console.log("Llegó a la ruta /compras");
-    res.sendFile(__dirname + "/pages/compras.html");
-  });
+app.get("/soporte", authorization.soloAdmin, (req, res) => res.sendFile(__dirname + "/pages/admin/soporte.html"));
+app.get("/proyectos", authorization.soloAdmin, (req, res) => res.sendFile(__dirname + "/pages/admin/proyectos.html"));
 app.get("/admin",authorization.soloAdmin,(req,res)=> res.sendFile(__dirname + "/pages/admin/admin.html"));
 app.post("/api/login",authentication.login);
 app.post("/api/register",authentication.register);
