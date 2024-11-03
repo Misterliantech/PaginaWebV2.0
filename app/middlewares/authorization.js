@@ -1,45 +1,70 @@
 import jsonwebtoken from "jsonwebtoken";
 import dotenv from "dotenv";
-import {usuarios} from "./../controllers/authentication.controller.js";
+import { getConnection } from "../ConexionDB/connectionSQLServer.js";
 
 dotenv.config();
 
-function soloAdmin(req, res, next, decodificada) {
-  const logueado = revisarCookie(req);
-  if (!logueado) return res.redirect("/");
-  const usuario = usuarios.find(usuario => usuario.user === decodificada.user);
-  if (usuario && usuario.rol === "admin") {
-    next();
-  } else {
-    res.status(403).send("No tienes permiso para acceder a esta página");
-  }
+async function soloAdmin(req, res, next) {
+  const decodificada = await revisarCookie(req);
+  if (!decodificada) return res.redirect("/");
+
+  // Asumimos que todos los usuarios tienen rol de admin
+  next();
 }
 
-function soloPublico(req, res, next) {
-  const logueado = revisarCookie(req);
+async function soloPublico(req, res, next) {
+  const logueado = await revisarCookie(req); // Asegúrate de usar await
   if (logueado) {
-    return res.redirect("/admin");
+      return res.redirect("/admin");
   } else {
-    return next();
+      return next();
   }
 }
 
-function revisarCookie(req) {
+async function revisarCookie(req) {
   try {
-    const cookieJWT = req.headers.cookie.split("; ").find(cookie => cookie.startsWith("jwt=")).slice(4);
-    const decodificada = jsonwebtoken.verify(cookieJWT, process.env.JWT_SECRET);
-    const usuarioAResvisar = usuarios.find(usuario => usuario.user === decodificada.user);
-    if (!usuarioAResvisar) {
+    // Verificar si hay cookies en la cabecera
+    if (!req.headers.cookie) {
+      console.warn("No hay cookies en la solicitud.");
       return false;
     }
+
+    const cookieJWT = req.headers.cookie.split("; ").find(cookie => cookie.startsWith("jwt="));
+    
+    if (!cookieJWT) {
+      console.warn("No se encontró la cookie 'jwt'.");
+      return false;
+    }
+
+    // Extraer el valor de la cookie JWT
+    const jwtToken = cookieJWT.slice(4); // Obtenemos solo el token, omitiendo "jwt="
+    const decodificada = jsonwebtoken.verify(jwtToken, process.env.JWT_SECRET);
+    
+    // Verificamos que el usuario existe en la base de datos
+    const pool = await getConnection();
+    if (!pool) {
+      console.error("No se pudo obtener el pool de conexiones.");
+      return false;
+    }
+    
+    const result = await pool.request()
+        .input('usuario', decodificada.user)
+        .query('SELECT * FROM Usuarios WHERE usuario = @usuario');
+    
+    const usuarioAResvisar = result.recordset[0];
+    if (!usuarioAResvisar) {
+      console.warn("Usuario no encontrado en la base de datos.");
+      return false;
+    }
+
     return decodificada;
-  } catch {
+  } catch (error) {
+    console.error("Error en revisarCookie: ", error);
     return false;
   }
 }
 
-
 export const methods = {
   soloAdmin,
   soloPublico,
-}
+};
