@@ -22,11 +22,12 @@ body {
 .header{
     box-sizing: border-box;
     margin-bottom: 20px;
-    margin: 0;
+    margin: auto;
     gap: 20px;
     background-color: black;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     align-items: center;
     height: 85px;
     padding: 5px 10%;
@@ -52,9 +53,11 @@ body {
 .header .nav-links {
 
     list-style: none;
+    white-space: nowrap;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     transition: transform 0.5s ease;
 }
 
@@ -96,6 +99,8 @@ body {
     transition: transform 0.5s ease;
     vertical-align: middle;
     margin: auto;
+    display: inline-block;
+    white-space: nowrap;
 
 }
 
@@ -227,10 +232,25 @@ body {
 
     align-items: center;
     display: flex;
-    text-align: center;
-    margin: auto;
-    margin-top: 20px;
+    margin: 0 20px;
     flex-direction: column;
+}
+
+.container {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.side-image {
+
+    width: 300px;
+    height: 450px;
+    margin: 0 20px;
+    border: 5px solid rgba(0,0,0,0.5);
+    border-radius: 10px;
 }
 
 .Soporte form{
@@ -356,19 +376,13 @@ body {
 
 .video-description {
     text-align: justify; 
-    margin: 30px;
-    margin-inline-end: 30px;
+    margin: 0 30px 20px;
 }
 
 .h1 {
 
-    margin: 60px auto;
-    margin-top: 60px auto;
-    margin-bottom: 60px auto;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    
+    margin: 20px;
 }
 
 
