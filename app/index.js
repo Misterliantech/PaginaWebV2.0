@@ -32,6 +32,7 @@ app.get("/logout", authorization.soloAdmin, (req, res) => {
 app.get("/soporte", authorization.soloAdmin, (req, res) => res.sendFile(__dirname + "/pages/admin/soporte.html"));
 app.get("/proyectos", authorization.soloAdmin, (req, res) => res.sendFile(__dirname + "/pages/admin/proyectos.html"));
 app.get("/nosotros", authorization.soloAdmin, (req, res) => res.sendFile(__dirname + "/pages/admin/nosotros.html"));
+app.get("/compras", authorization.soloAdmin, (req, res) => res.sendFile(__dirname + "/pages/admin/compras.html"));
 app.get("/admin",authorization.soloAdmin,(req,res)=> res.sendFile(__dirname + "/pages/admin/admin.html"));
 app.get("/whatsapp", (req, res) => res.redirect("https://wa.me/+573104260584"));
 app.post("/api/login",authentication.login);
