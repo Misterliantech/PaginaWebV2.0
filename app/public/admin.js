@@ -4,6 +4,11 @@ document.getElementsByTagName("button")[0].addEventListener("click", () => {
     document.location.href = "/";
 });
 
+document.getElementById('whatsapp').addEventListener('click', function(event) {
+    event.preventDefault(); // Evitar el comportamiento por defecto
+    window.open('https://wa.me/+573104260584', '_blank'); // Abrir WhatsApp en una nueva pestaña
+});
+
 
 let index = 0;
 const productos = document.querySelector('.contenedor');
