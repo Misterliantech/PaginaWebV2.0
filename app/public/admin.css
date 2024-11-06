@@ -131,11 +131,13 @@ body {
 }
 
 .contenedor {
+
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.5s ease; 
     width: fit-content;
+
 }
 
 .producto {
@@ -146,6 +148,8 @@ body {
     text-align: center;
     min-width: 300px; 
     max-width: 300px; 
+    overflow: hidden;
+    position: relative;
 }
 
 .producto img {
@@ -169,7 +173,7 @@ body {
 
 .producto:hover img,
 .producto:hover h3 {
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
@@ -282,6 +286,7 @@ body {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
+    overflow: hidden;
 }
 
 .galeria img {
