@@ -4,11 +4,11 @@ document.getElementsByTagName("button")[0].addEventListener("click", () => {
     document.location.href = "/";
 });
 
+
 let index = 0;
 const productos = document.querySelector('.contenedor');
 const totalProductos = document.querySelectorAll('.producto').length;
 const productosVisibles = 4;
-
 
 function cambiar(direccion) {
     index += direccion;

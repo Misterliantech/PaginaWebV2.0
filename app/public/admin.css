@@ -43,7 +43,6 @@ body {
     transform: scale(1.2);
 }
 
-/* Centrar los enlaces en el header */
 .header .nav-links-container {
     display: flex;
     flex-grow: 1; /* Esto permite que los enlaces se centren */
