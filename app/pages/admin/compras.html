@@ -23,15 +23,37 @@
             </nav>
         </div>
 
-        <a href="#" class="btn-container">
-            <img src="/images/compras.png" alt="comprar">      
-        </a>
+        <a href="/compras" class="btn-container">
+            <img src="/images/compras.png" alt="comprar">
+            <span class="cart-indicator"></span>      
+    </a>
 
         <a href="/logout" class="btn-container">
             <img href="/logout" src="/images/cerrar.png" alt="Cerrar Sesión">
         </a>
         
     </header>
+
+    <h1>Carrito de Compras</h1>
+
+    <table id = "cart-table">
+        <thead>
+             <tr>
+                  <th>Producto</th>
+                 <th>Precio</th>
+                 <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <div class="total-price">
+        <h3>Total: $<span id="total-price">0</span></h3>
+    </div>
+
+    <button class="total">Comprar</button>
 
     <a href="https://www.instagram.com/_julian.quinter0/" target="_blank" class="instagram-button">
         <img src="images/instagram.png" alt="instagram" />
@@ -44,5 +66,7 @@
         <a href="https://wa.me/+573104260584" target="_blank" class="whatsapp-button">
         <img src="/images/whatsapp.svg" alt="WhatsApp" />
     </a>
+
+    <script src="cart.js"></script>
 </body>
 </html>
